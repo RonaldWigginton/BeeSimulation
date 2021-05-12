@@ -9,7 +9,7 @@ import java.util.NoSuchElementException;
 
 public class main{
 public static void main(String[] args) {
-    Bee [][] Hive=new Bee[100][100];// The illusion array holds the Bee objects // 10000 Bees
+    Bee [][] Hive=new Bee[10][10];// The Hive array holds the Bee objects // 10000 Bees
     double beeTotal = (double) (Hive.length * Hive[0].length);
     double avgInfection =0.0,variance =0.0,infectedBees=0.0,stdev =0.0,bsum=0.0,bsum2=0.0,sickbees=0.0,average=0.0;
     int count=0;
@@ -67,7 +67,7 @@ public static void main(String[] args) {
             System.out.println("");
         }
         // Calculate Stats
-        sickbees=infectedBees;
+        sickbees=infectedBees-5;
         bsum+=sickbees;
         bsum2+=sickbees*sickbees;
         count++;
@@ -77,7 +77,7 @@ public static void main(String[] args) {
 
         System.out.println("There were " + infectedBees +" Infected Bees");
         System.out.println((average)+" AVG Bees Infected per Night");      // not as accurate in a short time period because we start with 5 infected Bees.
-        System.out.println("Variance:" +variance);                         // Will have to go back and fix this issue
+        System.out.println("Variance:" +variance);                         
   }
         System.out.println("");
         System.out.println("*** After 7 Nights ***");
